@@ -35,12 +35,12 @@ start() {
 	fi
 
 	if [ -n "$macaddr" ]; then
-		uci set network.wan_dev.macaddr="$macaddr"
+		uci set network.wan_eth0_2_dev.macaddr="$macaddr"
 		uci commit
 	fi
 
 	if [ -n "$macaddr" -o "$enable_dial"x != "0"x ]; then
-		/etc/init.d/network restart
+		# /etc/init.d/network restart >> /tmp/drcom-network-restart.log 2>&1
 	fi
 
 	cmd="service_start /usr/bin/gdut-drcom -c /etc/gdut-drcom.conf "
