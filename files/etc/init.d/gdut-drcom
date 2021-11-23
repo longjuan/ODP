@@ -39,9 +39,9 @@ start() {
 		uci commit
 	fi
 
-	if [ -n "$macaddr" -o "$enable_dial"x != "0"x ]; then
+	# if [ -n "$macaddr" -o "$enable_dial"x != "0"x ]; then
 		# /etc/init.d/network restart >> /tmp/drcom-network-restart.log 2>&1
-	fi
+	# fi
 
 	cmd="service_start /usr/bin/gdut-drcom -c /etc/gdut-drcom.conf "
 	if [ -n "$remote_ip" ]; then
